@@ -9,7 +9,7 @@ class LivroController extends Controller
 {
 
 
-    public function salvar(Request $request){
+    public function store(Request $request){
         $livro = Livro::create([
             'titulo' => $request->titulo,
             'ano_publicacao' => $request->ano_publicacao,
@@ -18,7 +18,7 @@ class LivroController extends Controller
 
         return response()->json($livro);
     }
-    public function listar(){
+    public function index(){
         $livros = Livro::all();
         
         return response()->json($livros);
